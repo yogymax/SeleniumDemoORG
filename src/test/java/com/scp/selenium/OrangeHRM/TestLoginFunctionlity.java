@@ -1,6 +1,6 @@
 package com.scp.selenium.OrangeHRM;
 
-import org.openqa.selenium.WebDriver;
+import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
 import com.scp.selenium.OrangeHRM.AppConstants.MyBrowsers;
@@ -11,9 +11,13 @@ import orangehrm.loginpo.OrangeDashboard;
 import orangehrm.loginpo.OrangeHRMLogin;
 
 public class TestLoginFunctionlity {
-  
+  Logger logger = Logger.getLogger(TestLoginFunctionlity.class);
+	
+	
+	
   @Test
   public void validCredentials() {
+	  logger.info("validCredentials");
 	  OrangeHRMLogin loginPage = 
 			  AppUtility.enterApplicationUrl(MyBrowsers.FIREFOX);
 	 OrangeDashboard dashboardPage = loginPage.enterCredentials("Admin", "admin");
@@ -23,6 +27,7 @@ public class TestLoginFunctionlity {
 	
   @Test
   public void invalidCredentials() {
+	  logger.info("invalidCredentials");
 	  OrangeHRMLogin loginPage = 
 			  AppUtility.enterApplicationUrl(MyBrowsers.FIREFOX);
 	  
@@ -33,6 +38,8 @@ public class TestLoginFunctionlity {
   
   @Test
   public void invalidUserName() {
+	  logger.info("invalidUserName");
+	  
 	  OrangeHRMLogin loginPage = 
 			  AppUtility.enterApplicationUrl(MyBrowsers.FIREFOX);
 	  
@@ -44,6 +51,7 @@ public class TestLoginFunctionlity {
   
   @Test
   public void invalidPassword() {
+	  logger.info("invalidPassword");
 	  OrangeHRMLogin loginPage = 
 			  AppUtility.enterApplicationUrl(MyBrowsers.FIREFOX);
 	  
@@ -54,6 +62,7 @@ public class TestLoginFunctionlity {
   
   @Test
   public void blankPassword() {
+	  logger.info("blankPassword");
 	  OrangeHRMLogin loginPage = 
 			  AppUtility.enterApplicationUrl(MyBrowsers.FIREFOX);
 	  
@@ -65,6 +74,7 @@ public class TestLoginFunctionlity {
   
   @Test
   public void blankUserName() {
+	  logger.info("blankUserName");
 	  OrangeHRMLogin loginPage = 
 			  AppUtility.enterApplicationUrl(MyBrowsers.FIREFOX);
 	  
@@ -75,6 +85,7 @@ public class TestLoginFunctionlity {
   
   @Test
   public void blankUsernamePassword() {
+	  logger.info("invalidCredentials");
 	  OrangeHRMLogin loginPage = 
 			  AppUtility.enterApplicationUrl(MyBrowsers.FIREFOX);
 	  

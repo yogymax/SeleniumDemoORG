@@ -1,4 +1,5 @@
 package orangehrm.loginpo;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -7,6 +8,7 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import com.scp.selenium.OrangeHRM.AppConstants;
+import com.scp.selenium.OrangeHRM.TestLoginFunctionlity;
 import com.scp.selenium.OrangeHRM.AppConstants.MyBrowsers;
 
 import junit.framework.Assert;
@@ -14,9 +16,11 @@ import junit.framework.Assert;
 public class AppUtility {
 	
 	static WebDriver driver =null;
+	static Logger logger = Logger.getLogger(AppUtility.class);
 	
 	public static WebDriver initilizeWebDriver(MyBrowsers type){
-		
+		logger.info("Inside initilizeWebDriver method");
+		logger.warn("Inside initilizeWebDriver method type " +type);
 		switch(type){
 			case FIREFOX:	
 				driver = new FirefoxDriver();

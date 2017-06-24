@@ -1,5 +1,6 @@
 package orangehrm.loginpo;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -7,6 +8,8 @@ import org.testng.Assert;
 
 public class OrangeHRMLogin implements PageObjectContract{
 
+	static Logger logger = Logger.getLogger(OrangeHRMLogin.class);
+	
 	@FindBy(xpath="/html/body/div[1]/div/div[2]/div/img")
 	WebElement orgHeading;
 	
@@ -31,6 +34,7 @@ public class OrangeHRMLogin implements PageObjectContract{
 	
 	
 	public String checkInvalidCredentials(String uname,String pwd){
+		logger.info("checkInvalidCredentials method " +uname  +" Passowrd " +pwd);
 		enterUserName(uname);
 		enterPassWord(pwd);
 		clickOnSubmit();
@@ -38,6 +42,7 @@ public class OrangeHRMLogin implements PageObjectContract{
 	}
 	
 	public OrangeDashboard enterCredentials(String uname,String pwd){
+		logger.info("enterCredentials method " +uname  +" Passowrd " +pwd);
 		enterUserName(uname);
 		enterPassWord(pwd);
 		clickOnSubmit();
@@ -49,21 +54,25 @@ public class OrangeHRMLogin implements PageObjectContract{
 	}
 
 	private void clickOnSubmit() {
+		logger.info("clickOnSubmit method ");
 		this.submitBtn.click();
 	}
 
 	private void enterPassWord(String pwd) {
+		logger.info(" enterPassWord " +pwd);
 		this.password.clear();
 		this.password.sendKeys(pwd);
 	}
 
 	private void enterUserName(String uname) {
+		logger.info(" enterUserName " +uname);
 		this.userName.clear();
 		this.userName.sendKeys(uname);
 	}
 	
 	
 	public void validateLoginPage(){
+		logger.info(" validateLoginPage ");
 		Assert.assertEquals(usernameDiv.getText(), "Username");
 		Assert.assertEquals(passwordDiv.getText(), "Password");
 		Assert.assertNotNull(orgHeading);
@@ -72,6 +81,7 @@ public class OrangeHRMLogin implements PageObjectContract{
 	}
 	
 	private String getErrorMessage(){
+		logger.info(" getErrorMessage ");
 		if(null==invalidLoginError)
 			return null;
 		else
