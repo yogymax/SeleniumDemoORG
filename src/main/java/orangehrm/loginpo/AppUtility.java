@@ -1,4 +1,6 @@
 package orangehrm.loginpo;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.io.File;
 
 import org.apache.log4j.Logger;
@@ -16,6 +18,59 @@ import junit.framework.Assert;
 
 public class AppUtility {
 	
+	
+	/**
+	 * 
+	 * Webelements
+	 * 1. Input Text
+	 * 2. Radio Buttons
+	 * 3. CheckBox
+	 * 4. Links
+	 * 5. Dropdown
+	 * 6. Multichoice Dropdown
+	 * 7. Buttons
+	 * 8. Alerts
+	 * 9. Scroll
+	 * 10. File Upload - AutoV3 and Robot Classes
+	 * 11. Handling Windows
+	 * 12. Handling Frames
+	 * 13. Date Picker
+	 * 14. Mouse Hovor
+	 * 15. Navigations - Frwd, backword, another page
+	 * 16. Refresh
+	 * 17. Maximize/Minimize Window
+	 * 19. Launch Broswer
+	 * 20. Screenshots
+	 * 21. Security Certificates
+	 * 22. Authetication Popups
+	 * 23. DatePicker
+	 * 24. Different kinds of wait
+	 * 25. Autopapulate
+	 * 26. ToolTip
+	 * 27. Handling Dynamic tables
+	 * 28. Checking Focus on a elements
+	 * 29. Checking the css properties
+	 * 30. Image comparism - Sikuli
+	 * 31. Database Testing
+	 * 32. API Testing
+	 * 
+	 * 
+	 * 
+	 * Alerts in Selenium
+	 * 1. Simple  - Ok or close icon
+	 * 2. Prompt  > Input text, OK button or close icon
+	 * 3. Confirmation  >  Ok and cancel
+	 * 	 * Methods > 
+	 * 		driver.switchTo.alert().getText() > To get the text
+	 * 		driver.switchTo.alert().dismiss() > To close the alert
+	 * 		driver.switchTo.alert().accept()  > All types of alert
+	 * 		driver.switchTo.alert().sendKeys("abcd")  .... This wil be for promt alert
+	 * 
+	 * Scroll
+	 * 			JavascriptExecutor jse = (JavascriptExecutor)driver;
+	 * 			jse.executeScript("window.scrollBy(0,250)", "")
+	 * 
+	 */
 	
 	static WebDriver driver =null;
 	static Logger logger = Logger.getLogger(AppUtility.class);
@@ -59,5 +114,12 @@ public class AppUtility {
 	public WebDriver getDriver(){
 		return driver;
 	}
-
+	
+	
+	public static void setDataToClipBoard(String path) {
+		StringSelection stringSelection = new StringSelection(path);
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);	
+	}
+	
+	
 }
