@@ -4,10 +4,10 @@ import java.awt.AWTException;
 import java.io.File;
 import java.io.IOException;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class PracticeForm {
 	
@@ -20,11 +20,27 @@ public class PracticeForm {
 		WebDriver driver = new ChromeDriver();*/
 		
 		WebDriver driver = new FirefoxDriver();
+		
+		/**
+		 * To Accept SSL Certificates using Selenium
+		 */
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+		
+		
 		driver.get("http://toolsqa.com/automation-practice-form/");
-		WebElement uploadFile =driver.findElement(By.id("photo"));
+		
+		
+		/*
+		//Screenshots in selenium
+		File src= ((TakesScreenshot)driver). getScreenshotAs(OutputType. FILE);
+		FileUtils. copyFile(src, new File(f.getAbsolutePath()+"\\src\\main\\java\\error.png"));
+		*/
+		
+		/*WebElement uploadFile =driver.findElement(By.id("photo"));
 		uploadFile.click();
 		Runtime.getRuntime().exec("C:\\Users\\Progvaltion_11\\Desktop\\Other\\AutoItDemo\\UploadMyFile.exe");
-		
+		*/
 		
 	/*	//Using Robot Class
 	 	AppUtility.setDataToClipBoard("C:\\Users\\Progvaltion_11\\Desktop\\Other\\demo1.txt");

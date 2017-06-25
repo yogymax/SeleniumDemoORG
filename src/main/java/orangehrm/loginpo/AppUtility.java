@@ -18,6 +18,12 @@ import junit.framework.Assert;
 
 public class AppUtility {
 	
+	/**
+	 * 
+	 * 
+	 * http://Admin:admin@opensource.demo.orangehrmlive.com/index.php
+	 */
+
 	
 	/**
 	 * 
@@ -36,13 +42,13 @@ public class AppUtility {
 	 * 12. Handling Frames
 	 * 13. Date Picker
 	 * 14. Mouse Hovor
-	 * 15. Navigations - Frwd, backword, another page
+	 * 15. Navigations - Frwd, backword, to another page,refresh
 	 * 16. Refresh
 	 * 17. Maximize/Minimize Window
 	 * 19. Launch Broswer
 	 * 20. Screenshots
 	 * 21. Security Certificates
-	 * 22. Authetication Popups
+	 * 22. Authetication Popups  > http://Admin:admin@opensource.demo.orangehrmlive.com/index.php
 	 * 23. DatePicker
 	 * 24. Different kinds of wait
 	 * 25. Autopapulate
@@ -70,6 +76,10 @@ public class AppUtility {
 	 * 			JavascriptExecutor jse = (JavascriptExecutor)driver;
 	 * 			jse.executeScript("window.scrollBy(0,250)", "")
 	 * 
+	 * 
+	 * 
+	 * File src= ((TakesScreenshot)driver). getScreenshotAs(OutputType. FILE);
+	 * FileUtils. copyFile(src, new File("C:/selenium/error.png"));
 	 */
 	
 	static WebDriver driver =null;
