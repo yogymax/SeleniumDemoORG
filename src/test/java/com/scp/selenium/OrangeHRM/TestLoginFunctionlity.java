@@ -1,8 +1,6 @@
 package com.scp.selenium.OrangeHRM;
 
 import org.apache.log4j.Logger;
-import org.testng.Assert;
-import org.testng.annotations.Test;
 
 import com.scp.selenium.OrangeHRM.AppConstants.MyBrowsers;
 
@@ -15,83 +13,83 @@ public class TestLoginFunctionlity {
 	
 	
 	
-  @Test
+  //@Test
   public void validCredentials() {
 	  logger.info("validCredentials");
 	  OrangeHRMLogin loginPage = 
 			  AppUtility.enterApplicationUrl(MyBrowsers.FIREFOX);
 	 OrangeDashboard dashboardPage = loginPage.enterCredentials("Admin", "admin");
-	 Assert.assertNotNull(dashboardPage);
-	 Assert.assertTrue(dashboardPage.isPageLoaded());
+	/* Assert.assertNotNull(dashboardPage);
+	 Assert.assertTrue(dashboardPage.isPageLoaded());*/
   }
 	
-  @Test
+  //@Test
   public void invalidCredentials() {
 	  logger.info("invalidCredentials");
 	  OrangeHRMLogin loginPage = 
 			  AppUtility.enterApplicationUrl(MyBrowsers.FIREFOX);
 	  
-	 Assert.assertEquals(AppConstants.INVALID_CREDETIALS,
-			 loginPage.checkInvalidCredentials("xyza", "asas"));
+	/* Assert.assertEquals(AppConstants.INVALID_CREDETIALS,
+			 loginPage.checkInvalidCredentials("xyza", "asas"));*/
 	 
   }
   
-  @Test
+  //@Test
   public void invalidUserName() {
 	  logger.info("invalidUserName");
 	  
 	  OrangeHRMLogin loginPage = 
 			  AppUtility.enterApplicationUrl(MyBrowsers.FIREFOX);
 	  
-	 Assert.assertEquals(AppConstants.INVALID_CREDETIALS,
+	/* Assert.assertEquals(AppConstants.INVALID_CREDETIALS,
 			 loginPage.checkInvalidCredentials("xyza", "admin"));
-
+*/
   }
   
   
-  @Test
+ // @Test
   public void invalidPassword() {
 	  logger.info("invalidPassword");
 	  OrangeHRMLogin loginPage = 
 			  AppUtility.enterApplicationUrl(MyBrowsers.FIREFOX);
 	  
-	 Assert.assertEquals(AppConstants.INVALID_CREDETIALS,
+	/* Assert.assertEquals(AppConstants.INVALID_CREDETIALS,
 			 loginPage.checkInvalidCredentials("Admin", "adnsa"));
-
+*/
   }
   
-  @Test
+//  @Test
   public void blankPassword() {
 	  logger.info("blankPassword");
 	  OrangeHRMLogin loginPage = 
 			  AppUtility.enterApplicationUrl(MyBrowsers.FIREFOX);
 	  
-	 Assert.assertEquals(AppConstants.PASSWORD_CANNOT_BE_BLANK,
-			 loginPage.checkInvalidCredentials("Admin", ""));
+	/* Assert.assertEquals(AppConstants.PASSWORD_CANNOT_BE_BLANK,
+			 loginPage.checkInvalidCredentials("Admin", ""));*/
 
   }
   
   
-  @Test
+  //@Test
   public void blankUserName() {
 	  logger.info("blankUserName");
 	  OrangeHRMLogin loginPage = 
 			  AppUtility.enterApplicationUrl(MyBrowsers.FIREFOX);
 	  
-	 Assert.assertEquals(AppConstants.USERNAME_CANNOT_BE_BLANK,
-			 loginPage.checkInvalidCredentials("", "admin"));
+	/* Assert.assertEquals(AppConstants.USERNAME_CANNOT_BE_BLANK,
+			 loginPage.checkInvalidCredentials("", "admin"));*/
 
   }
   
-  @Test
+  //@Test
   public void blankUsernamePassword() {
 	  logger.info("invalidCredentials");
 	  OrangeHRMLogin loginPage = 
 			  AppUtility.enterApplicationUrl(MyBrowsers.FIREFOX);
 	  
-	 Assert.assertEquals(AppConstants.USERNAME_CANNOT_BE_BLANK,
+	/* Assert.assertEquals(AppConstants.USERNAME_CANNOT_BE_BLANK,
 			 loginPage.checkInvalidCredentials("", ""));
-
+*/
   }
   
 }
