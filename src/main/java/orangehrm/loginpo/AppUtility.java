@@ -10,11 +10,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.scp.selenium.OrangeHRM.AppConstants;
 import com.scp.selenium.OrangeHRM.AppConstants.MyBrowsers;
-
-import junit.framework.Assert;
 
 public class AppUtility {
 	

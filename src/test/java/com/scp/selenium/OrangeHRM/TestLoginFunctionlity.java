@@ -1,11 +1,11 @@
 package com.scp.selenium.OrangeHRM;
 
 import org.apache.log4j.Logger;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.scp.selenium.OrangeHRM.AppConstants.MyBrowsers;
 
-import junit.framework.Assert;
 import orangehrm.loginpo.AppUtility;
 import orangehrm.loginpo.OrangeDashboard;
 import orangehrm.loginpo.OrangeHRMLogin;
