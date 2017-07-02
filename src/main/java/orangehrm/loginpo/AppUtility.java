@@ -10,7 +10,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 import com.scp.selenium.OrangeHRM.AppConstants;
 import com.scp.selenium.OrangeHRM.AppConstants.MyBrowsers;
@@ -107,7 +106,7 @@ public class AppUtility {
 				driver = new SafariDriver();
 				break;
 			default:
-				Assert.fail("Specified driver is not configured...!");
+				System.out.println("Specified driver is not configured...!");
 		}
 		
 		return driver;
