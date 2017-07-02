@@ -12,7 +12,7 @@ import com.scp.selenium.OrangeHRM.TestLoginFunctionlity;
 public class OrangeDashboard implements PageObjectContract {
 
 	static Logger logger = Logger.getLogger(OrangeDashboard.class);
-	@FindBy(xpath="/html/body/div[1]/div[3]/div/div[1]/h1")
+	/*@FindBy(xpath="/html/body/div[1]/div[3]/div/div[1]/h1")
 	WebElement dashboardSubtitle;
 	
 	@FindBy(xpath="/html/body/div[1]/div[2]")
@@ -23,11 +23,16 @@ public class OrangeDashboard implements PageObjectContract {
 	
 	@FindBy(id="menu_pim_Configuration")
 	WebElement configuration;
-	
-	
+	*/
+
 	public boolean isPageLoaded() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	/*public boolean isPageLoaded() {
 		logger.info("isPageLoaded method of dashboard page");
-		return dashboardSubtitle!=null && dashboardMenus!=null;
+		//return dashboardSubtitle!=null && dashboardMenus!=null;
 	}
 	
 	
@@ -39,7 +44,7 @@ public class OrangeDashboard implements PageObjectContract {
 		driver.findElement(By.id("menu_pim_viewReportingMethods")).click();;
 		
 		
-	}
+	}*/
 	
 	
 }
